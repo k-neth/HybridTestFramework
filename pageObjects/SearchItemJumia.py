@@ -5,8 +5,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 class SearchItemJumia:
-    searchtext="van-field-9-input"
+    # searchtext="van-field-9-input"
     searchbutton = ".search-button"
+    searchtext = '/html/body/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div/div/input'
     # filtertopsales="//*[@id='__nuxt']/div/div[3]/div[2]/div[2]/div[1]/div[2]/span"
 
     def __init__(self, driver):
@@ -20,7 +21,7 @@ class SearchItemJumia:
     
     #     startsearch.send_keys(searchterm)
     def Startsearch(self,searchterm):
-        startsearch=self.driver.find_element(By.ID, self.searchtext)
+        startsearch=self.driver.find_element(By.XPATH, self.searchtext)
 
         startsearch.click()
         startsearch.send_keys(searchterm)

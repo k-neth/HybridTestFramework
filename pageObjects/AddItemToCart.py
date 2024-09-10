@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 class AddItemToCart:
     cart =""
     itemprices = ".product-item .info-box .product-price[data-v-75a3da00]"
+    partiallinktext = "KSh" 
     def __init__(self, driver):
         self.driver = driver
 
@@ -17,6 +18,10 @@ class AddItemToCart:
         print("Item added to cart")
         pass
     def allPrices(self):
-        combinedprices=self.driver.find_elements(By.CSS_SELECTOR, self.itemprices)
-        print(combinedprices)
+        print("To list prices")
+        pass
+
+        # prices = self.driver.find_elements(By.PARTIAL)
+        # combinedprices=self.driver.find_elements(By.CSS_SELECTOR, self.itemprices)
+        # print(combinedprices)
 
