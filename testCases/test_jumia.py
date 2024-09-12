@@ -30,12 +30,12 @@ class Test_J01:
         # self.driver = setup
        
         self.driver.get(self.baseurl)
-        time.sleep(5)
+        # time.sleep(5)
 
         self.lp=LoginJumia(self.driver)
         self.lp.setUsername(self.username)
         self.lp.setPassword(self.password)
-        time.sleep(5)
+        # time.sleep(5)
        
 
 
