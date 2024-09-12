@@ -6,11 +6,17 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 class GetPricesJumia:
     mainwrapperCSSSELECTOR=".listings"
-    miniwrapperPriceCSSSelector=".product-price"
+    miniwrapperPriceCSSSelector="div.product-price"
+    searchinputID = "van-field-10-input"
 
     def __init__(self, driver):
         self.driver=driver
 
-    def getprices(self):
-        pass
+    def getprices(self,searchterm):
+        self.driver.find_element(By.ID, self.searchinputID).send_keys(searchterm + Keys.ENTER)
+        # allprices = self.driver.find_elements(By.CSS_SELECTOR, self.miniwrapperPriceCSSSelector)
+        # allprices.text
+        # for item in allprices:
+        #     return item
+            
 

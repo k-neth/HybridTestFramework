@@ -1,12 +1,13 @@
 import pytest
 from pageObjects.LoginJumia import LoginJumia
 from pageObjects.SearchItemJumia import SearchItemJumia
-from pageObjects.AddItemToCart import AddItemToCart
+# from pageObjects.AddItemToCart import AddItemToCart
 from pageObjects.GetPricesJumia import GetPricesJumia
 import time
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from utilities.readCredentials import ReadConfig
+
 
 @pytest.mark.usefixtures("setup")
 class Test_J01:
@@ -25,6 +26,7 @@ class Test_J01:
     # mdriver=webdriver.Chrome()
 
     @pytest.mark.regression
+
     def test_KilimallLogin(self):
                 
         # self.driver = setup
@@ -35,7 +37,9 @@ class Test_J01:
         self.lp=LoginJumia(self.driver)
         self.lp.setUsername(self.username)
         self.lp.setPassword(self.password)
-        # time.sleep(5)
+        time.sleep(15)
+        self.lp.getprices(self.searchterm)
+        
        
 
 
@@ -46,22 +50,23 @@ class Test_J01:
         # self.lp.Startsearch()
         # self.lp.StartSearch()
 
-    def test_KilimallSearch(self):
-        # self.driver.get(self.baseurl)
+    # def test_KilimallSearch(self):
+    #     # self.driver.get(self.baseurl)
   
-        # self.test_KilimallLogin()
-        self.ks=SearchItemJumia(self.driver)
-        self.ks.Startsearch(searchterm=self.searchterm)
-        self.ks.ClickSearchButton()
-    def test_GetItem(self):
-        self.gt=AddItemToCart(self.driver)
-        self.gt.ClickCart()
-        self.gt.ItemAdded()
-        self.gt.allPrices()
+    #     # self.test_KilimallLogin()
+    #     self.ks=SearchItemJumia(self.driver)
+    #     self.ks.Startsearch(searchterm=self.searchterm)
+    #     self.ks.ClickSearchButton()
+    # def test_GetItem(self):
+    #     self.gt=AddItemToCart(self.driver)
+    #     self.gt.ClickCart()
+    #     self.gt.ItemAdded()
+    #     self.gt.allPrices()
         # time.sleep(10)
-    def test_getPricesJumia(self):
-        self.gp=GetPricesJumia(self.driver)
-        self.gp.getprices()
+    # def test_pricesresult(self):
+
+    #     self.gp=GetPricesJumia(self.driver)
+    #     self.gp.getprices(searchterm=self.searchterm)
         
         # self.ks.filterTop()
         # self.ks.ClickSearchButton()

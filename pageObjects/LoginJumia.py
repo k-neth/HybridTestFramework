@@ -7,8 +7,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 class LoginJumia:
     username = "account"
     password = "password"
-    loginbutton = "/html/body/div[1]/div/div[2]/div/div[1]/div/form/div[3]/button"
+    loginbutton = "div.search-button"
     searchtext="van-field-9-input"
+
 
     def __init__(self, driver):
         self.driver = driver
@@ -19,3 +20,9 @@ class LoginJumia:
     def setPassword(self,password):
         self.driver.find_element(By.NAME,self.password).send_keys(password)
         self.driver.find_element(By.NAME,self.password).send_keys(Keys.ENTER)
+    def getprices(self,searchterm):
+        self.driver.find_element(By.ID, self.searchtext).send_keys(searchterm)
+        self.driver.find_element(By.CSS_SELECTOR, self.loginbutton).click()
+    
+  
+    
