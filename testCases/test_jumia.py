@@ -7,7 +7,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from utilities.readCredentials import ReadConfig
-
+from utilities.customLogger import LogGen
 
 @pytest.mark.usefixtures("setup")
 class Test_J01:
@@ -21,6 +21,8 @@ class Test_J01:
     
         
     searchterm=ReadConfig.getSearchitem()
+
+    logger=LogGen.loggen()
     # searchterm="Hennesy"
 
     # mdriver=webdriver.Chrome()
@@ -37,9 +39,17 @@ class Test_J01:
         self.lp=LoginJumia(self.driver)
         self.lp.setUsername(self.username)
         self.lp.setPassword(self.password)
-        time.sleep(15)
-        self.lp.getprices(self.searchterm)
+        self.logger.info("Loggin in with password and username")
+        time.sleep(10)
+        self.lp.entertextitem(self.searchterm)
         
+        self.logger.info("Item to search entered")
+        time.sleep(10)
+        self.lp.submitsearch()
+        self.logger.info("-----waiting for results----")
+        time.sleep(10)
+        self.logger.info("---------getting item prices-----------")
+        self.lp.getitemprices()
        
 
 
