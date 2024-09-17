@@ -12,8 +12,6 @@ from utilities.customLogger import LogGen
 @pytest.mark.usefixtures("setup")
 class Test_J01:
     # baseurl = "https://www.kilimall.co.ke/login"
-    # username="721356751"
-    # password="@Kenya2023"
     baseurl=ReadConfig.getApplicationURL()
     username=ReadConfig.getUseremail()
     password=ReadConfig.getPassword()
