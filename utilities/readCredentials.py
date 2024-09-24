@@ -1,8 +1,8 @@
 import configparser
 
 config=configparser.RawConfigParser()
-config.read(".\\Configurations\\mycred.ini")
-
+# config.read(".\\Configurations\\mycred.ini")
+config.read("/home/kim/hybridframework/HybridTestFramework/Configurations/mycred.ini")
 class ReadConfig:
     @staticmethod
     def getApplicationURL():
@@ -20,6 +20,8 @@ class ReadConfig:
         return password
     @staticmethod
     def getSearchitem():
+        # searchitem="SAMSUNG"
+
         searchitem=input("enter your search keyword")
         return searchitem
 

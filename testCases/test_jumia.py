@@ -12,13 +12,15 @@ from utilities.customLogger import LogGen
 @pytest.mark.usefixtures("setup")
 class Test_J01:
     # baseurl = "https://www.kilimall.co.ke/login"
+
+    searchterm=ReadConfig.getSearchitem()
     baseurl=ReadConfig.getApplicationURL()
     username=ReadConfig.getUseremail()
     password=ReadConfig.getPassword()
 
     
         
-    searchterm=ReadConfig.getSearchitem()
+    
 
     logger=LogGen.loggen()
     # searchterm="Hennesy"
@@ -28,6 +30,7 @@ class Test_J01:
     @pytest.mark.regression
 
     def test_KilimallLogin(self):
+      
                 
         # self.driver = setup
        
@@ -42,8 +45,9 @@ class Test_J01:
         self.lp.entertextitem(self.searchterm)
         
         self.logger.info("Item to search entered")
-        time.sleep(10)
+        time.sleep(5)
         self.lp.submitsearch()
+        time.sleep(5)
         self.logger.info("-----waiting for results----")
         time.sleep(10)
         self.logger.info("---------getting item prices-----------")

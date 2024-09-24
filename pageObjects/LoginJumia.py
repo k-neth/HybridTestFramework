@@ -8,7 +8,10 @@ class LoginJumia:
     username = "account"
     password = "password"
     loginbutton = "div.search-button"
+    sbutton='//*[@id="pc__search-input"]/div[2]'
     searchtext="van-field-9-input"
+    infbx="div.info-box"
+    descrelement="p.product-title"
     priceselement = "div.product-price"
 
 
@@ -28,12 +31,37 @@ class LoginJumia:
         Stxt.send_keys(searchterm + Keys.ENTER)
         
     def submitsearch(self):
-        self.driver.find_element(By.CSS_SELECTOR, self.loginbutton).click()
+         
+        self.driver.find_element(By.XPATH, self.sbutton).click()
     def getitemprices(self):
+        infobox =self.driver.find_elements(By.CSS_SELECTOR,self.infbx)
+        iteminfo = self.driver.find_elements(By.CSS_SELECTOR,self.descrelement)
         allprices = self.driver.find_elements(By.CSS_SELECTOR, self.priceselement)
-        prices = [ prices.text for prices in allprices]
-        print(prices)
-        return prices
+
+
+        for iteminfo in infobox:
+            print (iteminfo.text)
+
+
+        # itemsfound = [itemsfound.text for itemsfound in infobox]
+        
+        # print(itemsfound)
+
+        # infnprices = [infobox.text for infobox in iteminfo]
+        # print (infnprices)
+        # itinfo = [itinfo.text for itinfo in iteminfo]
+        # print(itinfo)
+        # prices = [prices.text for prices in allprices]
+
+        # print(prices)
+        
+        
+
+
+
+        # prices = [ prices.text for prices in allprices]
+        # print(prices)
+        # return prices
 
 
     
