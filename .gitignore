@@ -4,3 +4,8 @@ testCases/__pycache__/test_jumia.cpython-312-pytest-7.4.3.pyc
 Configurations/mycred.ini
 testCases/conftest.py
 Configurations/mycred.ini
+HybridTestFramework/*.pyc
+/*.pyc
+__pycache__/
+/__pycache__/
+/__pycache__

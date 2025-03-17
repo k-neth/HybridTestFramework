@@ -1,12 +1,12 @@
 import configparser
 
 config=configparser.RawConfigParser()
-config.read(".\\Configurations\\config.ini")
-
+# config.read(".\\Configurations\\config.ini")
+config.read ("C:\Users\Eddy\Documents\SeleniumHybridFramework\HybridTestFramework\Configurations\config.ini")
 class ReadConfig:
     @staticmethod
     def getApplicationURL():
-        url=config.get('common info','baseURL')
+        url=config.get('common info','baseurl')
         return url
 
     @staticmethod

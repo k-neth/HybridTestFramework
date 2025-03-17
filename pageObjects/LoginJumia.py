@@ -9,7 +9,7 @@ class LoginJumia:
     password = "password"
     loginbutton = "div.search-button"
     sbutton='//*[@id="pc__search-input"]/div[2]'
-    searchtext="van-field-9-input"
+    searchtext=".van-field__control"    
     infbx="div.info-box"
     descrelement="p.product-title"
     priceselement = "div.product-price"
@@ -26,7 +26,7 @@ class LoginJumia:
         self.driver.find_element(By.NAME,self.password).send_keys(password)
         self.driver.find_element(By.NAME,self.password).send_keys(Keys.ENTER)
     def entertextitem(self,searchterm):
-        Stxt = self.driver.find_element(By.ID, self.searchtext)
+        Stxt = self.driver.find_element(By.CSS_SELECTOR, self.searchtext)
         
         Stxt.send_keys(searchterm + Keys.ENTER)
         
