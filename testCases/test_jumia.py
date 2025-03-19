@@ -42,6 +42,8 @@ class Test_J01:
         self.lp.setPassword(self.password)
         self.logger.info("Loggin in with password and username")
         time.sleep(10)
+
+        
         self.lp.entertextitem(self.searchterm)
         
         self.logger.info("Item to search entered")
@@ -52,36 +54,10 @@ class Test_J01:
         time.sleep(10)
         self.logger.info("---------getting item prices-----------")
         self.lp.getitemprices()
-       
 
 
 
 
-        # self.lp.CheckSuccess()
-        # self.lp.searchitem(searchterm=self.searchterm)
-        # self.lp.Startsearch()
-        # self.lp.StartSearch()
-
-    # def test_KilimallSearch(self):
-    #     # self.driver.get(self.baseurl)
-  
-    #     # self.test_KilimallLogin()
-    #     self.ks=SearchItemJumia(self.driver)
-    #     self.ks.Startsearch(searchterm=self.searchterm)
-    #     self.ks.ClickSearchButton()
-    # def test_GetItem(self):
-    #     self.gt=AddItemToCart(self.driver)
-    #     self.gt.ClickCart()
-    #     self.gt.ItemAdded()
-    #     self.gt.allPrices()
-        # time.sleep(10)
-    # def test_pricesresult(self):
-
-    #     self.gp=GetPricesJumia(self.driver)
-    #     self.gp.getprices(searchterm=self.searchterm)
-        
-        # self.ks.filterTop()
-        # self.ks.ClickSearchButton()
 
     
    

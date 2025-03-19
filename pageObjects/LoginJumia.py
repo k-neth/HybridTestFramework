@@ -4,7 +4,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-class LoginJumia:
+
+
+class init:
     username = "account"
     password = "password"
     loginbutton = "div.search-button"
@@ -13,6 +15,8 @@ class LoginJumia:
     infbx="div.info-box"
     descrelement="p.product-title"
     priceselement = "div.product-price"
+class LoginJumia(init):
+
 
 
     def __init__(self, driver):
@@ -25,6 +29,7 @@ class LoginJumia:
         
         self.driver.find_element(By.NAME,self.password).send_keys(password)
         self.driver.find_element(By.NAME,self.password).send_keys(Keys.ENTER)
+
     def entertextitem(self,searchterm):
         Stxt = self.driver.find_element(By.CSS_SELECTOR, self.searchtext)
         

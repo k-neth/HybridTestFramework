@@ -8,5 +8,7 @@ HybridTestFramework/*.pyc
 /*.pyc
 __pycache__/
 /__pycache__/
-/__pycache__
+*/__pycache__
 *.ini
+*.pytest_cache
+*.venv
