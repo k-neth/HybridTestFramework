@@ -5,10 +5,11 @@ Configurations/mycred.ini
 testCases/conftest.py
 Configurations/mycred.ini
 HybridTestFramework/*.pyc
+utils/*.pyc
 /*.pyc
 __pycache__/
 /__pycache__/
 */__pycache__
-*.ini
+
 *.pytest_cache
 *.venv

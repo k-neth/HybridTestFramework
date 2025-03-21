@@ -1,14 +1,14 @@
-# from selenium import webdriver
+import num2words as n2w
 
+lt = []
 
-# driver=webdriver.Chrome()
+converted=[]
 
-# sites="https://pip.pypa.io/en/stable/installation/"
-# driver.get(sites)
-# print(driver.title)
+for item in range(1, 10):
+    lt.append(item)
 
-lt = [1,1,1,1,1,2,2,3,3,3]
+    converted.append(n2w.num2words(item))
 
-for item in lt:
-    if item==1:
-        print('one')
+print (lt)
+    
+print (converted)

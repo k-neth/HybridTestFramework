@@ -9,6 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from utilities.readCredentials import ReadConfig
 from utilities.customLogger import LogGen
 
+
 @pytest.mark.usefixtures("setup")
 class Test_J01:
     # baseurl = "https://www.kilimall.co.ke/login"
@@ -40,14 +41,14 @@ class Test_J01:
         self.lp=LoginJumia(self.driver)
         self.lp.setUsername(self.username)
         self.lp.setPassword(self.password)
-        self.logger.info("Loggin in with password and username")
+        self.logger.info("Loggin in with password and username successful") 
         time.sleep(10)
 
         
         self.lp.entertextitem(self.searchterm)
         
         self.logger.info("Item to search entered")
-        time.sleep(5)
+        
         self.lp.submitsearch()
         time.sleep(5)
         self.logger.info("-----waiting for results----")
@@ -55,6 +56,9 @@ class Test_J01:
         self.logger.info("---------getting item prices-----------")
         self.lp.getitemprices()
 
+
+class Test_J02:
+    
 
 
 
